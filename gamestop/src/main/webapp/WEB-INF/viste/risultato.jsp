@@ -29,7 +29,7 @@
 							<tr>
 								
 								<td>${videogioco.titolo}</td>
-								<td>${videogioco.hp}</td>
+								<td>${videogioco.prezzo}</td>
 								<td>${videogioco.classificazionePEGI}</td>
 								<td>${videogioco.categoria}</td>
 								

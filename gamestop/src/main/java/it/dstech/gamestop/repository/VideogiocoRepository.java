@@ -11,10 +11,10 @@ import it.dstech.gamestop.model.Videogioco;
 
 public interface VideogiocoRepository extends CrudRepository<Videogioco, Long> {
 	
-	@Query(value = "SELECT c FROM Customer c WHERE c.name LIKE '%' || :keyword || '%'"
-			+ " OR c.email LIKE '%' || :keyword || '%'"
-			+ " OR c.address LIKE '%' || :keyword || '%'")
-	public List<Videogioco> search(@Param("keyword") String keyword);
+//	@Query(value = "SELECT c FROM Customer c WHERE c.name LIKE '%' || :keyword || '%'"
+//			+ " OR c.email LIKE '%' || :keyword || '%'"
+//			+ " OR c.address LIKE '%' || :keyword || '%'")
+//	public List<Videogioco> search(@Param("keyword") String keyword);
 
 
 	public List<Videogioco>findAllOrderByTitoloAsc(String titolo); 

@@ -1,6 +1,8 @@
 package it.dstech.gamestop.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +17,7 @@ public class Videogioco {
 	private String titolo;
 	private int classificazionePEGI;
 	private double prezzo;
+	@Enumerated(EnumType.STRING)
 	private Categoria categoria;
 	
 	public Videogioco () {		

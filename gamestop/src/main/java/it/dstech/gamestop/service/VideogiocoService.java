@@ -7,6 +7,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import it.dstech.gamestop.model.Categoria;
 import it.dstech.gamestop.model.Videogioco;
 import it.dstech.gamestop.repository.VideogiocoRepository;
 
@@ -22,19 +23,19 @@ public class VideogiocoService {
 	
 	 public List<Videogioco> sortByTitoloAsc() {
 		 
-	        return repo.findAllOrderByTitoloAsc("titolo");
+	        return repo.findByTitoloOrderByTitoloAsc("titolo");
 	    }
 	 
 	 public List<Videogioco> sortByCategoriaAsc() {
-	        return repo.findAllOrderByCategoriaAsc("categoria");
+	        return repo.findByCategoriaOrderByCategoriaAsc(Categoria.AVVENTURA);
 	    }
 	 
 	 public List<Videogioco> sortByPrezzoAsc() {
-	        return repo.findAllOrderByPrezzoAsc("prezzo");
+	        return repo.findByPrezzoOrderByPrezzoAsc(10.00);
 	    }
 	 
 	 public List<Videogioco> sortByClassificazionePEGIAsc() {
-	        return repo.findAllOrderByClassificazionePEGIAsc("classificazionePEGI");
+	        return repo.findByClassificazionePEGIOrderByClassificazionePEGIAsc("classificazionePEGI");
 	    }
 
 }

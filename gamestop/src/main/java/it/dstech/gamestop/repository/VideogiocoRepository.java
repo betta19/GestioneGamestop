@@ -17,12 +17,12 @@ public interface VideogiocoRepository extends CrudRepository<Videogioco, Long> {
 //	public List<Videogioco> search(@Param("keyword") String keyword);
 
 
-	public List<Videogioco>findByTitoloOrderByTitoloAsc(String titolo); 
+	public List<Videogioco>findByOrderByTitoloAsc(); 
 	
-	public List<Videogioco>findByCategoriaOrderByCategoriaAsc(Categoria categoria);
+	public List<Videogioco>findByOrderByCategoriaAsc();
 	
-	public List<Videogioco>findByPrezzoOrderByPrezzoAsc(double prezzo);
+	public List<Videogioco>findByOrderByPrezzoAsc();
 	
-	public List<Videogioco>findByClassificazionePEGIOrderByClassificazionePEGIAsc(String classificazionePEGI);
+	public List<Videogioco>findByOrderByClassificazionePEGIAsc();
 
 }

@@ -12,10 +12,11 @@
     crossorigin="anonymous">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Digimon Sorted</title>
+<title></title>
+
 </head>
 <body>
-<h3>Ordinamento per attacco</h3>
+<h3> Games Sorted </h3>
 					<table border="1" cellpadding="5">
 						<tr>
 							
@@ -29,9 +30,9 @@
 							<tr>
 								
 								<td>${videogioco.titolo}</td>
-								<td>${videogioco.prezzo}</td>
-								<td>${videogioco.classificazionePEGI}</td>
 								<td>${videogioco.categoria}</td>
+								<td>${videogioco.classificazionePEGI}</td>
+								<td>${videogioco.prezzo}</td>
 								
 
 							</tr>

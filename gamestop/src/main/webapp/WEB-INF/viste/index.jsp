@@ -10,11 +10,33 @@
 <title></title>
 </head>
 <body>
-<form method="post" action="ordinamento">
-<INPUT TYPE="radio" name="command" value="0"/>Ordina per titolo
-<INPUT TYPE="radio" NAME="command" VALUE="1"/>Ordina per categoria 
-<INPUT TYPE="radio" NAME="command" VALUE="2"/>Ordina per prezzo 
-<INPUT TYPE="radio" NAME="command" VALUE="3"/>Ordina per PEGI 
+<table border="1" cellpadding="5">
+						<tr>
+							
+							<th>Titolo</th>
+							<th>Categoria</th>
+							<th>Classificazione PEGI</th>
+							<th>Prezzo</th>
+							
+						</tr>
+						<c:forEach items="${lista}" var="videogioco">
+							<tr>
+								
+								<td>${videogioco.titolo}</td>
+								<td>${videogioco.categoria}</td>
+								<td>${videogioco.classificazionePEGI}</td>
+								<td>${videogioco.prezzo}</td>
+								
+
+							</tr>
+						</c:forEach>
+					</table> <br> <br>
+<form action="ordinamento" method="post">
+
+<INPUT type="radio" name="command" value="0" /> Ordina per Titolo <br>
+			<INPUT type="radio" name="command" value="1" /> Ordina per Categoria <br>
+			<INPUT type="radio" name="command" value="2" /> Ordina per Prezzo <br> 
+			<INPUT type="radio" name="command" value="3" /> Ordina per Classificazione <br> 
 <INPUT TYPE="submit" VALUE="Ordina!" />
 </form>
 </body>

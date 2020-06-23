@@ -23,19 +23,19 @@ public class VideogiocoService {
 	
 	 public List<Videogioco> sortByTitoloAsc() {
 		 
-	        return repo.findByTitoloOrderByTitoloAsc("titolo");
+	        return repo.findByOrderByTitoloAsc();
 	    }
 	 
 	 public List<Videogioco> sortByCategoriaAsc() {
-	        return repo.findByCategoriaOrderByCategoriaAsc(Categoria.AVVENTURA);
+	        return repo.findByOrderByCategoriaAsc();
 	    }
 	 
 	 public List<Videogioco> sortByPrezzoAsc() {
-	        return repo.findByPrezzoOrderByPrezzoAsc(10.00);
+	        return repo.findByOrderByPrezzoAsc();
 	    }
 	 
 	 public List<Videogioco> sortByClassificazionePEGIAsc() {
-	        return repo.findByClassificazionePEGIOrderByClassificazionePEGIAsc("classificazionePEGI");
+	        return repo.findByOrderByClassificazionePEGIAsc();
 	    }
 
 }

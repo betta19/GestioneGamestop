@@ -19,34 +19,43 @@ public class VideogiocoController {
 	@Autowired
 	private VideogiocoService videogiocoService;
 
-	@RequestMapping(value = "/ordinamento", method = RequestMethod.POST)
-	public ModelAndView index(@RequestParam("command") int command) {
+	@RequestMapping(value = {"/"})
+	public ModelAndView home() {
 		List<Videogioco> lista = videogiocoService.listAll();
-
-		switch (command) {
+		ModelAndView mav = new ModelAndView("index");
+		mav.addObject("lista", lista);
+		return mav;
+		
+	}
+	
+	@RequestMapping(value = {"/ordinamento"}, method = RequestMethod.POST)
+	public ModelAndView index(@RequestParam("command") String command) {
+		List<Videogioco> lista = videogiocoService.listAll();
+		ModelAndView mav = new ModelAndView("risultato");
+		switch (Integer.parseInt(command)) {
 		case 0: {
 		
-			ModelAndView mav = new ModelAndView("risultato");
+			
 			mav.addObject("lista", videogiocoService.sortByTitoloAsc());
 			return mav;
 			
 		}
 		case 1: {
 			
-			ModelAndView mav = new ModelAndView("risultato");
+			
 			mav.addObject("lista", videogiocoService.sortByCategoriaAsc());
 			return mav;
 		
 		}
 		case 2: {
 			
-			ModelAndView mav = new ModelAndView("risultato");
+			
 			mav.addObject("lista", videogiocoService.sortByPrezzoAsc());
 			return mav;
 			
 		}
 		case 3: {
-			ModelAndView mav = new ModelAndView("risultato");
+		
 			mav.addObject("lista", videogiocoService.sortByClassificazionePEGIAsc());
 			return mav;
 			
@@ -54,7 +63,7 @@ public class VideogiocoController {
 		}
 
 		default:
-			ModelAndView mav = new ModelAndView("index");
+		
 			mav.addObject("lista", lista);
 			return mav;
 		}

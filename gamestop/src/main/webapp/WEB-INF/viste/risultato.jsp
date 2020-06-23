@@ -16,8 +16,9 @@
 
 </head>
 <body>
-<h3> Games Sorted </h3>
-					<table border="1" cellpadding="5">
+<br>
+<c:out value="${messaggio}"></c:out><br><br>
+					<table class="table table-striped">
 						<tr>
 							
 							<th>Titolo</th>

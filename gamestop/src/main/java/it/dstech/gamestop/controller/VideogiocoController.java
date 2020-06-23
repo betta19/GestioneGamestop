@@ -37,6 +37,7 @@ public class VideogiocoController {
 		
 			
 			mav.addObject("lista", videogiocoService.sortByTitoloAsc());
+			mav.addObject("messaggio", "Ordinamento per Titolo");
 			return mav;
 			
 		}
@@ -44,6 +45,7 @@ public class VideogiocoController {
 			
 			
 			mav.addObject("lista", videogiocoService.sortByCategoriaAsc());
+			mav.addObject("messaggio", "Ordinamento per Categoria");
 			return mav;
 		
 		}
@@ -51,12 +53,14 @@ public class VideogiocoController {
 			
 			
 			mav.addObject("lista", videogiocoService.sortByPrezzoAsc());
+			mav.addObject("messaggio", "Ordinamento per Prezzo");
 			return mav;
 			
 		}
 		case 3: {
 		
 			mav.addObject("lista", videogiocoService.sortByClassificazionePEGIAsc());
+			mav.addObject("messaggio", "Ordinamento per Classificazione PEGI");
 			return mav;
 			
 	
